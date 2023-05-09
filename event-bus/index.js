@@ -5,8 +5,12 @@ const axios = require("axios");
 const app = express();
 app.use(bodyParser.json());
 
+const events = [];
+
 app.post("/events", (req, res) => {
   const event = req.body;
+
+  events.push(event);
 
   axios.post("http://localhost:4000/events", event).catch((err) => {
     console.log(err.message, ":4000");
@@ -15,13 +19,17 @@ app.post("/events", (req, res) => {
     console.log(err.message, ":4001");
   });
   axios.post("http://localhost:4002/events", event).catch((err) => {
-    console.log(err.message, ":4002");
+    console.log(err.message, ":error occured in 4002");
   });
   axios.post("http://localhost:4003/events", event).catch((err) => {
     console.log(err.message, ":4003");
   });
 
   res.send({ staus: "OK" });
+});
+
+app.get("/events", (req, res) => {
+  res.send(events);
 });
 
 app.listen(4005, () => {
