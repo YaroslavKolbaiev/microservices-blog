@@ -1,0 +1,17 @@
+apiVersion: apps/v1 # deployment is inside the bucket of different objects called apps/v1
+kind: Deployment
+metadata:
+  name: post-depl # name of deployment
+spec: # specify how the deployment should behave
+  replicas: 1 # replicas is a number of pods we want to create, running some particular image
+  selector: # is saying :- hey, take a look of all different pods have been created and find all pods with LABEL of app: posts
+    matchLabels:
+      app: posts
+  template: # is where we specify the exact configuration of a pod that we want this deployment to create
+    metadata:
+      labels:
+        app: posts
+    spec: # is describing the specification or configuration options of the pod we are trying to make
+      containers:
+        - name: posts
+          image: irick05nazar/posts:0.0.1
