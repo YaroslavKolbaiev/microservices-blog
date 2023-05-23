@@ -48,6 +48,7 @@ app.post("/events", (req, res) => {
 app.listen(4002, async () => {
   console.log("Listening on 4002");
 
+  // if query service is down, after being resumed the query service calls event-bus events to get last updates
   try {
     const res = await axios.get("http://localhost:4005/events");
 

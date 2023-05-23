@@ -19,7 +19,7 @@ app.post("/events", async (req, res) => {
         id: data.id,
         postId: data.postId,
         status,
-        content: data.content,
+        content: data.content, // ??? what for
       },
     });
 
