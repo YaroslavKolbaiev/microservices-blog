@@ -14,4 +14,4 @@ spec: # specify how the deployment should behave
     spec: # is describing the specification or configuration options of the pod we are trying to make
       containers:
         - name: posts
-          image: irick05nazar/posts:0.0.1
+          image: irick05nazar/posts

@@ -1,0 +1,16 @@
+# Kubernetes
+
+## Deployment Commands
+
+kubectl get deployments - list all the running deployments
+kubectl describe deployment [depl_name] - print out details about a specific deployment
+kubectl apply -f [config_file_name] - create a deployment out of a config file
+kubectl delete deployment [depl_name] - delete a deployment
+
+## Updating the Image
+
+Step1 - The deployment must be using the 'latest' tag in the pod section
+Step2 - Make an update to your code
+Step3 - Build the IMAGE by runninig "docker build -t [image_name] ."
+Step4 - Push the image to docker hub by running "docker push [image_name]"
+Step5 - run the command "kubectl rollout restart deployment [depl_name]"
