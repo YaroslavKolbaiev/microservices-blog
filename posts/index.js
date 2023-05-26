@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const posts = {};
-const eventBusURL = "http://localhost:4005/events";
+const eventBusURL = "http://event-bus-srv:4005/events";
 
 app.get("/posts", (req, res) => {
   // after creating query service, this request is not required anymore
