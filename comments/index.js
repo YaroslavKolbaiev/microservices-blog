@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const commentsByPostId = {};
-const eventBusURL = "http://localhost:4005/events";
+const eventBusURL = "http://event-bus-srv:4005/events";
 
 app.get("/posts/:id/comments", (req, res) => {
   res.send(commentsByPostId[req.params.id] || []); // after creating the query service, this request is not required anymore

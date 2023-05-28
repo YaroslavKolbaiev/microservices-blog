@@ -40,6 +40,8 @@ app.get("/posts", (req, res) => {
 app.post("/events", (req, res) => {
   const { type, data } = req.body;
 
+  console.log(type);
+
   handleEvents(type, data);
 
   res.send({});
@@ -50,7 +52,7 @@ app.listen(4002, async () => {
 
   // if query service is down, after being resumed the query service calls event-bus events to get last updates
   try {
-    const res = await axios.get("http://localhost:4005/events");
+    const res = await axios.get("http://event-bus-srv:4005/events");
 
     for (let event of res.data) {
       console.log("Processing event:", event.type);

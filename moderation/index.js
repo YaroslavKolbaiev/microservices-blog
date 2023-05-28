@@ -5,10 +5,12 @@ const axios = require("axios");
 const app = express();
 app.use(bodyParser.json());
 
-const eventBusURL = "http://localhost:4005/events";
+const eventBusURL = "http://event-bus-srv:4005/events";
 
 app.post("/events", async (req, res) => {
   const { type, data } = req.body;
+
+  console.log(type);
 
   if (type === "CommentCreated") {
     const status = data.content.includes("orange") ? "rejected" : "approved";
