@@ -23,3 +23,11 @@
 - NODE PORT - Makes a pod accessible from outside the cluster. Usually only used for dev purposes.
 - LOAD BALANCER - makes a pod accessible from outside the cluster. This is the right way to expose a pod to the outside world
 - EXTERNAL NAME - Redirects an in-cluster request to a CNAME url
+
+## Load Balancer
+
+- Tells Kebertnetes to reach out to its provider and provision a load balancer. Gets traffic in to a songle POD
+
+## Ingress Controller
+
+- A POD with a set of routing rules to destribute traffic to other services
