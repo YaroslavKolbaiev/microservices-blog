@@ -13,7 +13,7 @@
 
 - Step1 - The deployment must be using the 'latest' tag in the pod section
 - Step2 - Make an update to your code
-- Step3 - Build the IMAGE by runninig "docker build -t [image_name] ."
+- Step3 - Build the IMAGE by runninig "docker build -t [image_name]."
 - Step4 - Push the image to docker hub by running "docker push [image_name]"
 - Step5 - run the command "kubectl rollout restart deployment [depl_name]"
 
