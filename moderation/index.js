@@ -10,10 +10,8 @@ const eventBusURL = "http://event-bus-srv:4005/events";
 app.post("/events", async (req, res) => {
   const { type, data } = req.body;
 
-  console.log(type);
-
   if (type === "CommentCreated") {
-    const status = data.content.includes("orange") ? "rejected" : "approved";
+    const status = data.content.includes("red") ? "rejected" : "approved";
 
     await axios.post(eventBusURL, {
       type: "CommentModerated",
