@@ -22,7 +22,7 @@
 - CLUSTER IP - Sets an easy-remember URL to access a pod. Only exposes pods in the cluster
 - NODE PORT - Makes a pod accessible from outside the cluster. Usually only used for dev purposes.
 - LOAD BALANCER - makes a pod accessible from outside the cluster. This is the right way to expose a pod to the outside world
-- EXTERNAL NAME - Redirects an in-cluster request to a CNAME url
+- EXTERNAL NAME - Redirects an in-cluster request to a 'NAME' url
 
 ## Load Balancer
 
